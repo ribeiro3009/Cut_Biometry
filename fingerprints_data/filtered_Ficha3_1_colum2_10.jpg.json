@@ -1,0 +1,75 @@
+{
+    "image_path": "filtered_colums_from_raw\\filtered_Ficha3_1_colum2_10.jpg",
+    "fingerprints": [
+        {
+            "x": 10,
+            "yi": 2063,
+            "yf": 2200,
+            "w": 250,
+            "color": "green"
+        },
+        {
+            "x": 4,
+            "yi": 1597,
+            "yf": 1794,
+            "w": 256,
+            "color": "red"
+        },
+        {
+            "x": 4,
+            "yi": 1801,
+            "yf": 2010,
+            "w": 256,
+            "color": "red"
+        },
+        {
+            "x": 13,
+            "yi": 1178,
+            "yf": 1333,
+            "w": 247,
+            "color": "red"
+        },
+        {
+            "x": 13,
+            "yi": 1341,
+            "yf": 1541,
+            "w": 247,
+            "color": "red"
+        },
+        {
+            "x": 4,
+            "yi": 260,
+            "yf": 480,
+            "w": 256,
+            "color": "red"
+        },
+        {
+            "x": 4,
+            "yi": 507,
+            "yf": 673,
+            "w": 256,
+            "color": "red"
+        },
+        {
+            "x": 4,
+            "yi": 721,
+            "yf": 875,
+            "w": 256,
+            "color": "red"
+        },
+        {
+            "x": 4,
+            "yi": 948,
+            "yf": 1102,
+            "w": 256,
+            "color": "red"
+        },
+        {
+            "x": 31,
+            "yi": 4,
+            "yf": 197,
+            "w": 218,
+            "color": "green"
+        }
+    ]
+}
