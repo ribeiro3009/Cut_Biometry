@@ -1,0 +1,33 @@
+{
+    "image_path": "filtered_colums_from_raw\\filtered_ficha1_1_colum1_5.jpg",
+    "fingerprints": [
+        {
+            "x": 0,
+            "yi": 139,
+            "yf": 433,
+            "w": 265,
+            "color": "green"
+        },
+        {
+            "x": 0,
+            "yi": 433,
+            "yf": 849,
+            "w": 294,
+            "color": "red"
+        },
+        {
+            "x": 0,
+            "yi": 849,
+            "yf": 1113,
+            "w": 294,
+            "color": "red"
+        },
+        {
+            "x": 0,
+            "yi": 1119,
+            "yf": 1381,
+            "w": 296,
+            "color": "green"
+        }
+    ]
+}

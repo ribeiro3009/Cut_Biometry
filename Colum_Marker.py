@@ -86,6 +86,6 @@ def mark_columns(input_image_path, classification):
 #mark_columns("Filtradas/filtered_2_1.jpg", "5-5")
 #mark_columns("Filtradas/filtered_2_2.jpg", "Colunas_Marcadas/marked_columns_2_2.jpg", "5-5")
 #mark_columns("Filtradas/filtered_2_3.jpg", "Colunas_Marcadas/marked_columns_2_3.jpg", "0-10")
-#mark_columns("Filtradas/filtered_2_1_1.jpg", "Colunas_Marcadas/marked_columns_2_1_1.jpg", "5-5")
+#mark_columns("Filtradas/filtered_2_1_1.jpg", "5-5")
 #mark_columns("Filtradas/filtered_2_2_1.jpg", "Colunas_Marcadas/marked_columns_2_2_1.jpg", "5-5")
 #mark_columns("Filtradas/filtered_2_3_1.jpg", "Colunas_Marcadas/marked_columns_2_3_1.jpg", "0-10")

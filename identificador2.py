@@ -13,13 +13,17 @@ def detect_and_mark_fingerprints(image_path, output_path, data_output):
     thresh = cv2.adaptiveThreshold(
         gray, 255, cv2.ADAPTIVE_THRESH_GAUSSIAN_C, cv2.THRESH_BINARY_INV, 25, 10)
 
+    kernel = cv2.getStructuringElement(cv2.MORPH_RECT, (1,1))
+    thresh = cv2.morphologyEx(thresh, cv2.MORPH_CLOSE, kernel, iterations=1)
+    thresh = cv2.morphologyEx(thresh, cv2.MORPH_OPEN,  kernel, iterations=1)
+
     contours, _ = cv2.findContours(
         thresh, cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE)
 
     height, width = gray.shape
-    Y_min = 100
-    Y_max = int(0.15 * height) if height > 1500 else int(0.25 * height)
-    minimum_length = 80
+    Y_min = int(0.05 * height) if height > 1500 else int(0.10 * height)
+    Y_max = int(0.15 * height) if height > 1500 else int(0.20 * height)
+    minimum_length = int(0.3 * width)
 
     fingerprint_data = []
 
@@ -38,7 +42,7 @@ def detect_and_mark_fingerprints(image_path, output_path, data_output):
 
             min_val = np.min(projection)
             max_val = np.max(projection)
-            threshold = min_val + 0.25 * (max_val - min_val)
+            threshold = min_val + 0.21* (max_val - min_val)
 
             splits = []
             start = None
@@ -85,7 +89,9 @@ input_files = [
     "filtered_Ficha2_colum1_5.jpg",
     "filtered_Ficha2_colum2_5.jpg",
     "filtered_Ficha3_1_colum2_10.jpg",
-    "filtered_Ficha3_colum2_10.jpg"
+    "filtered_Ficha3_colum2_10.jpg",
+    "filtered_ficha1_1_colum2_5.jpg",
+    "filtered_ficha1_1_colum1_5.jpg",
 ]
 
 for filename in input_files:

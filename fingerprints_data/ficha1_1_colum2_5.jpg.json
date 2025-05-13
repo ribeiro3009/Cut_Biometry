@@ -1,0 +1,33 @@
+{
+    "image_path": "cutted_colums_raw\\ficha1_1_colum2_5.jpg",
+    "fingerprints": [
+        {
+            "x": 125,
+            "yi": 708,
+            "yf": 819,
+            "w": 98,
+            "color": "green"
+        },
+        {
+            "x": 34,
+            "yi": 687,
+            "yf": 865,
+            "w": 154,
+            "color": "green"
+        },
+        {
+            "x": 0,
+            "yi": 695,
+            "yf": 848,
+            "w": 274,
+            "color": "red"
+        },
+        {
+            "x": 0,
+            "yi": 213,
+            "yf": 377,
+            "w": 275,
+            "color": "red"
+        }
+    ]
+}

@@ -1,0 +1,40 @@
+{
+    "image_path": "cutted_colums_raw\\Ficha1_colum2_5.jpg",
+    "fingerprints": [
+        {
+            "x": 0,
+            "yi": 152,
+            "yf": 288,
+            "w": 267,
+            "color": "green"
+        },
+        {
+            "x": 0,
+            "yi": 380,
+            "yf": 530,
+            "w": 318,
+            "color": "red"
+        },
+        {
+            "x": 0,
+            "yi": 606,
+            "yf": 769,
+            "w": 318,
+            "color": "red"
+        },
+        {
+            "x": 0,
+            "yi": 831,
+            "yf": 980,
+            "w": 318,
+            "color": "red"
+        },
+        {
+            "x": 0,
+            "yi": 1033,
+            "yf": 1241,
+            "w": 318,
+            "color": "red"
+        }
+    ]
+}

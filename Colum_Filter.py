@@ -20,6 +20,7 @@ def enhance_fingerprints(image_path, output_path):
 
     gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
     
+    gray = cv2.GaussianBlur(gray, (3,3), 0)
     # Binarização adaptativa para melhor definição das digitais
     thresh = cv2.adaptiveThreshold(gray, 255, cv2.ADAPTIVE_THRESH_GAUSSIAN_C,
                                    cv2.THRESH_BINARY_INV, 41, 8)
@@ -53,10 +54,10 @@ def enhance_fingerprints(image_path, output_path):
 
 
 # Processa todas as imagens
-#filtered_images = []
-#for path in image_paths:
-#    filename = os.path.basename(path)
- #   output_path = os.path.join(output_dir, f"filtered_{filename}")
- #   filtered = enhance_fingerprints(path, output_path)
- #   filtered_images.append((filename, filtered))
+filtered_images = []
+for path in image_paths:
+    filename = os.path.basename(path)
+    output_path = os.path.join("filtered_colums_from_raw", f"filtered_{filename}")
+    filtered = enhance_fingerprints(path, output_path)
+    filtered_images.append((filename, filtered))
 
