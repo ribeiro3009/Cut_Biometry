@@ -2,38 +2,38 @@
     "image_path": "filtered_colums_from_raw\\filtered_Ficha2_1_colum1_5.jpg",
     "fingerprints": [
         {
-            "x": 12,
-            "yi": 105,
-            "yf": 335,
-            "w": 338,
-            "color": "red"
+            "x": 17,
+            "yi": 103,
+            "yf": 333,
+            "w": 283,
+            "color": "green"
         },
         {
-            "x": 12,
-            "yi": 335,
-            "yf": 548,
-            "w": 338,
-            "color": "red"
+            "x": 17,
+            "yi": 329,
+            "yf": 574,
+            "w": 333,
+            "color": "green"
         },
         {
             "x": 10,
-            "yi": 548,
+            "yi": 566,
             "yf": 755,
             "w": 340,
             "color": "red"
         },
         {
-            "x": 20,
+            "x": 18,
             "yi": 758,
             "yf": 969,
-            "w": 225,
+            "w": 227,
             "color": "green"
         },
         {
             "x": 15,
-            "yi": 969,
-            "yf": 1137,
-            "w": 225,
+            "yi": 968,
+            "yf": 1139,
+            "w": 222,
             "color": "green"
         }
     ]

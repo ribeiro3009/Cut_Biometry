@@ -2,17 +2,17 @@
     "image_path": "cutted_colums_raw\\Ficha3_1_colum2_10.jpg",
     "fingerprints": [
         {
-            "x": 14,
-            "yi": 1625,
-            "yf": 1789,
-            "w": 82,
-            "color": "green"
-        },
-        {
             "x": 31,
             "yi": 274,
             "yf": 464,
             "w": 107,
+            "color": "green"
+        },
+        {
+            "x": 14,
+            "yi": 1625,
+            "yf": 1789,
+            "w": 82,
             "color": "green"
         }
     ]

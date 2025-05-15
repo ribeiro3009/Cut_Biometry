@@ -35,5 +35,5 @@ def remove_lines_keep_fingerprints(image_path):
     return fingerprints_only
 
 # Exemplo de uso
-#result = remove_lines_keep_fingerprints("Fichas/Ficha1_1.jpg")
-#cv2.imwrite("Filtradas/filtered_2_1_1.jpg", result)
+result = remove_lines_keep_fingerprints("Fichas/Ficha1_1.jpg")
+cv2.imwrite("Filtradas/filtered_2_1_1.jpg", result)

@@ -31,7 +31,7 @@ def cut_columns(file_path, col1_coords, col2_coords=None, output_dir="cutted_col
 
 
 
-cut_columns("Fichas/ficha1_1.jpg", (28,324), (1420,1699))
+#cut_columns("Fichas/ficha1_1.jpg", (28,324), (1420,1699))
 #cut_columns("Fichas/Ficha2.jpg", (0,264),(1413,1676))
 #cut_columns("Fichas/Ficha3.jpg", (0,0), (1331,1610))
 #cut_columns("Fichas/Ficha2_1.jpg",(28,324),(1420,1699))
