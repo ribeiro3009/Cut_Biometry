@@ -1,0 +1,40 @@
+{
+    "image_path": "saida\\columns_filtered\\filtered_ficha1_1_colum1_5.jpg",
+    "fingerprints": [
+        {
+            "x": 0,
+            "yi": 139,
+            "yf": 433,
+            "w": 265,
+            "color": "green"
+        },
+        {
+            "x": 0,
+            "yi": 433,
+            "yf": 701,
+            "w": 294,
+            "color": "blue"
+        },
+        {
+            "x": 0,
+            "yi": 701,
+            "yf": 886,
+            "w": 294,
+            "color": "blue"
+        },
+        {
+            "x": 0,
+            "yi": 886,
+            "yf": 1112,
+            "w": 294,
+            "color": "red"
+        },
+        {
+            "x": 0,
+            "yi": 1119,
+            "yf": 1369,
+            "w": 296,
+            "color": "green"
+        }
+    ]
+}
