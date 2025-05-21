@@ -10,7 +10,6 @@ input_dir = "cutted_colums_raw"
 # Lista de imagens enviadas
 image_paths = sorted(glob(os.path.join(input_dir, "*.jpg")))
 
-# Filtro potente e refinado para realçar digitais
 def enhance_fingerprints(image_path, output_path):
     img = cv2.imread(image_path)
     if img is None:
@@ -19,32 +18,36 @@ def enhance_fingerprints(image_path, output_path):
 
     gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
 
-    # Threshold sensível a detalhes
+    # Contraste local para digitais mais claras
+    clahe = cv2.createCLAHE(clipLimit=2.0, tileGridSize=(8, 8))
+    gray = clahe.apply(gray)
+
+    # Threshold adaptativo mais agressivo
     thresh = cv2.adaptiveThreshold(
         gray, 255,
         cv2.ADAPTIVE_THRESH_GAUSSIAN_C,
         cv2.THRESH_BINARY_INV,
-        31, 7)
+        31, 10  # janelas maiores ajudam em regiões "vazias"
+    )
 
-    # Remoção de linhas verticais/horizontais com kernel pequeno
+    # Remoção de linhas (como antes)
     vertical_kernel = cv2.getStructuringElement(cv2.MORPH_RECT, (1, 10))
     horizontal_kernel = cv2.getStructuringElement(cv2.MORPH_RECT, (10, 1))
-
     vertical_lines = cv2.morphologyEx(thresh, cv2.MORPH_OPEN, vertical_kernel)
     horizontal_lines = cv2.morphologyEx(thresh, cv2.MORPH_OPEN, horizontal_kernel)
     all_lines = cv2.bitwise_or(vertical_lines, horizontal_lines)
 
-    # Remove as linhas da binarizada
     no_lines = cv2.bitwise_and(thresh, cv2.bitwise_not(all_lines))
 
-    # Remoção leve de ruído sem perder cristas
-    kernel_clean = cv2.getStructuringElement(cv2.MORPH_ELLIPSE, (2, 2))
-    cleaned = cv2.morphologyEx(no_lines, cv2.MORPH_OPEN, kernel_clean)
+    # ***Preenchimento dos miolos das digitais*** com closing (fecha falhas finas)
+    kernel_fill = cv2.getStructuringElement(cv2.MORPH_ELLIPSE, (3, 3))
+    filled = cv2.morphologyEx(no_lines, cv2.MORPH_CLOSE, kernel_fill)
 
-    # 🚫 Sem dilatação — preserva os contornos reais
-    cv2.imwrite(output_path, cleaned)
-    return cleaned
+    # ***Suavização final***: remove ruído isolado sem comer bordas
+    smoothed = cv2.medianBlur(filled, 3)
 
+    cv2.imwrite(output_path, smoothed)
+    return smoothed
 
 
 # Processa todas as imagens
