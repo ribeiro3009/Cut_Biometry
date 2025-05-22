@@ -75,6 +75,7 @@ def detect_and_mark_fingerprints(image_path, output_path, data_output):
         json.dump(data, f, indent=4)
 
 # Execução em batch
+'''
 input_dir = "filtered_colums_from_raw"
 output_dir = "marked_images_raw"
 data_dir = "fingerprints_data"
@@ -101,4 +102,4 @@ for filename in input_files:
 
     detect_and_mark_fingerprints(input_path, output_path, data_output)
 
-print("Processamento completo! Imagens salvas em:", output_dir)
+print("Processamento completo! Imagens salvas em:", output_dir)'''

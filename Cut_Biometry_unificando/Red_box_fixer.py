@@ -129,6 +129,7 @@ def fixing_redbox(json_data_path, corrected_output_path, corrected_json_output):
     with open(corrected_json_output, 'w') as f:
         json.dump(corrected_data, f, indent=4)
 
+'''
 for json_file in os.listdir(data_dir):
     if json_file.endswith(".json"):
         json_data_path = os.path.join(data_dir, json_file)
@@ -141,3 +142,4 @@ for json_file in os.listdir(data_dir):
             corrected_data_dir, f"corrected_{json_file}")
 
         fixing_redbox(json_data_path, corrected_output_path, corrected_json_output)
+'''

@@ -62,21 +62,21 @@ def mark_columns(input_image_path, output_image_path, classification):
     if classification == '5-5':
         left_begin, left_end = find_columns(img_bin, 'left', n_pixels_start_5_5, n_pixels_end, minimal_length, additional_steps, minimal_adition)
         right_begin, right_end = find_columns(img_bin, 'right', n_pixels_start_5_5, n_pixels_end, minimal_length, additional_steps, minimal_adition)
-        print(f"({left_begin},{left_end})")
-        print(f"({right_end},{right_begin})")
+        #print(f"({left_begin},{left_end})")
+        #print(f"({right_end},{right_begin})")
         cv2.rectangle(img_original, (left_begin, 0), (left_end, img_original.shape[0]), (0, 255, 0), 2)
         cv2.rectangle(img_original, (right_end, 0), (right_begin, img_original.shape[0]), (0, 255, 0), 2)
         return f"{input_image_path}",(left_begin,left_end),(right_end,right_begin)
 
     elif classification == '10-0':
         left_begin, left_end = find_columns(img_bin, 'left', n_pixels_start_0_10, n_pixels_end, minimal_length, additional_steps, minimal_adition)
-        print(f"(x={left_begin},{left_end})")
+        #print(f"(x={left_begin},{left_end})")
         cv2.rectangle(img_original, (left_begin, 0), (left_end, img_original.shape[0]), (0, 255, 0), 2)
         return f"{input_image_path}",(left_begin,left_end),(0,0)
 
     elif classification == '0-10':
         right_begin, right_end = find_columns(img_bin, 'right', n_pixels_start_0_10, n_pixels_end, minimal_length, additional_steps, minimal_adition)
-        print(f"({right_end},{right_begin})")
+       # print(f"({right_end},{right_begin})")
         cv2.rectangle(img_original, (right_end, 0), (right_begin, img_original.shape[0]), (0, 255, 0), 2)
         return f"{input_image_path}",(0,0),(right_end,right_begin)
 

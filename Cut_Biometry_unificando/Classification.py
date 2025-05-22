@@ -48,20 +48,20 @@ def classifica_ficha(caminho_imagem):
         return "0-10"
     else: return "0-10"
 
-if __name__ == "__main__":
-    BASE_DIR = os.path.dirname(__file__)
-    INPUT_DIR = os.path.join(BASE_DIR, "Filtradas")
+#if __name__ == "__main__":
+#    BASE_DIR = os.path.dirname(__file__)
+#    INPUT_DIR = os.path.join(BASE_DIR, "Filtradas")
 
-    if not os.path.isdir(INPUT_DIR):
-        print(f"Pasta não encontrada: {INPUT_DIR}")
-        exit(1)
+#    if not os.path.isdir(INPUT_DIR):
+#        print(f"Pasta não encontrada: {INPUT_DIR}")
+#        exit(1)
 
-    arquivos = sorted(
-        [f for f in os.listdir(INPUT_DIR) if f.lower().endswith((".png", ".jpg"))]
-    )
-    print(f"{len(arquivos)} imagens encontradas em '{INPUT_DIR}'\n")
+#    arquivos = sorted(
+#        [f for f in os.listdir(INPUT_DIR) if f.lower().endswith((".png", ".jpg"))]
+#    )
+#    print(f"{len(arquivos)} imagens encontradas em '{INPUT_DIR}'\n")
 
-    for nome in arquivos:
-        caminho = os.path.join(INPUT_DIR, nome)
-        tipo = classifica_ficha(caminho)
-        print(f"→ {nome} -> {tipo}")
+#    for nome in arquivos:
+#        caminho = os.path.join(INPUT_DIR, nome)
+#        tipo = classifica_ficha(caminho)
+#        print(f"→ {nome} -> {tipo}")
