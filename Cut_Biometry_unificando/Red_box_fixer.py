@@ -22,7 +22,7 @@ def fixing_redbox(json_data_path, corrected_output_path, corrected_json_output):
 
     gray = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
     thresh = cv2.adaptiveThreshold(
-        gray, 255, cv2.ADAPTIVE_THRESH_GAUSSIAN_C, cv2.THRESH_BINARY_INV, 41, 10)
+        gray, 255, cv2.ADAPTIVE_THRESH_GAUSSIAN_C, cv2.THRESH_BINARY_INV, 11, 10)
 
     fingerprints.sort(key=lambda fp: fp['yi'])
 
@@ -79,7 +79,7 @@ def fixing_redbox(json_data_path, corrected_output_path, corrected_json_output):
             for n in range(1, num_digitais):
                 expected_y = yi + int(n * avg_normal_height)
 
-                margin = 30
+                margin = 40
                 faixa_inicio = max(yi, expected_y - margin)
                 faixa_fim = min(yf, expected_y + margin)
 

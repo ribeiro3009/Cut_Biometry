@@ -2,73 +2,73 @@
     "image_path": "C:/Users/rj0369870548/Desktop/Projects_VsCode/Corte_fichas/Cut_Biometry/Cut_Biometry_unificando\\saida\\ficha_901231100430_verso\\columns_filtered\\filtered_ficha_901231100430_verso_colum2_10.jpg",
     "fingerprints": [
         {
-            "x": 92,
-            "yi": 1955,
+            "x": 90,
+            "yi": 1953,
             "yf": 2182,
-            "w": 212,
+            "w": 214,
             "color": "green"
         },
         {
-            "x": 121,
-            "yi": 1720,
+            "x": 119,
+            "yi": 1716,
             "yf": 1919,
-            "w": 183,
-            "color": "green"
-        },
-        {
-            "x": 116,
-            "yi": 1504,
-            "yf": 1700,
-            "w": 188,
+            "w": 185,
             "color": "green"
         },
         {
             "x": 115,
-            "yi": 1282,
-            "yf": 1486,
+            "yi": 1502,
+            "yf": 1716,
             "w": 189,
             "color": "green"
         },
         {
-            "x": 149,
-            "yi": 1070,
-            "yf": 1239,
-            "w": 155,
+            "x": 95,
+            "yi": 1281,
+            "yf": 1485,
+            "w": 209,
             "color": "green"
         },
         {
-            "x": 89,
-            "yi": 796,
-            "yf": 1040,
-            "w": 215,
+            "x": 146,
+            "yi": 1066,
+            "yf": 1239,
+            "w": 158,
             "color": "green"
+        },
+        {
+            "x": 44,
+            "yi": 595,
+            "yf": 719,
+            "w": 260,
+            "color": "red"
+        },
+        {
+            "x": 44,
+            "yi": 804,
+            "yf": 1021,
+            "w": 260,
+            "color": "red"
         },
         {
             "x": 118,
-            "yi": 589,
-            "yf": 781,
+            "yi": 391,
+            "yf": 587,
             "w": 186,
             "color": "green"
         },
         {
-            "x": 121,
-            "yi": 396,
-            "yf": 587,
-            "w": 183,
-            "color": "green"
-        },
-        {
-            "x": 120,
+            "x": 118,
             "yi": 187,
             "yf": 367,
-            "w": 184,
+            "w": 186,
             "color": "green"
         },
         {
-            "x": 145,
+            "x": 143,
             "yi": 0,
-            "yf": 117,
-            "w": 159,
+            "yf": 134,
+            "w": 161,
             "color": "green"
         }
     ]

@@ -1,4 +1,3 @@
-
 import cv2
 import numpy as np
 import os
@@ -18,42 +17,38 @@ def enhance_fingerprints(image_path, output_path):
         return
 
     gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
-    gray = cv2.bilateralFilter(gray, d=9, sigmaColor=75, sigmaSpace=75)  # suaviza ruído preservando bordas
-    clahe = cv2.createCLAHE(clipLimit=2.0, tileGridSize=(8,8))
+
+    # Contraste local para digitais mais claras
+    clahe = cv2.createCLAHE(clipLimit=2.0, tileGridSize=(8, 8))
     gray = clahe.apply(gray)
 
-    # Gabor filters
-    gabor_sum = np.zeros_like(gray, dtype=np.float32)
-    for theta in np.arange(0, np.pi, np.pi / 8):
-        kernel = cv2.getGaborKernel((31, 31), 4.0, theta, 10.0, 0.5)
-        filtered = cv2.filter2D(gray, cv2.CV_32F, kernel)
-        gabor_sum = np.maximum(gabor_sum, filtered)
+    # Threshold adaptativo mais agressivo
+    thresh = cv2.adaptiveThreshold(
+        gray, 255,
+        cv2.ADAPTIVE_THRESH_GAUSSIAN_C,
+        cv2.THRESH_BINARY_INV,
+        31, 10  # janelas maiores ajudam em regiões "vazias"
+    )
 
-    gabor_norm = cv2.normalize(gabor_sum, None, 0, 255, cv2.NORM_MINMAX).astype(np.uint8)
+    # Remoção de linhas (como antes)
+    vertical_kernel = cv2.getStructuringElement(cv2.MORPH_RECT, (1, 10))
+    horizontal_kernel = cv2.getStructuringElement(cv2.MORPH_RECT, (10, 1))
+    vertical_lines = cv2.morphologyEx(thresh, cv2.MORPH_OPEN, vertical_kernel)
+    horizontal_lines = cv2.morphologyEx(thresh, cv2.MORPH_OPEN, horizontal_kernel)
+    all_lines = cv2.bitwise_or(vertical_lines, horizontal_lines)
 
-    # Remove linhas (como antes)
-    vert_kernel = cv2.getStructuringElement(cv2.MORPH_RECT, (1, 20))
-    horz_kernel = cv2.getStructuringElement(cv2.MORPH_RECT, (20, 1))
-    vert_lines = cv2.morphologyEx(gabor_norm, cv2.MORPH_OPEN, vert_kernel)
-    horz_lines = cv2.morphologyEx(gabor_norm, cv2.MORPH_OPEN, horz_kernel)
-    all_lines = cv2.add(vert_lines, horz_lines)
+    no_lines = cv2.bitwise_and(thresh, cv2.bitwise_not(all_lines))
 
-    no_lines = cv2.subtract(gabor_norm, all_lines)
-    no_lines = cv2.equalizeHist(no_lines)
+    # ***Preenchimento dos miolos das digitais*** com closing (fecha falhas finas)
+    kernel_fill = cv2.getStructuringElement(cv2.MORPH_ELLIPSE, (3, 3))
+    filled = cv2.morphologyEx(no_lines, cv2.MORPH_CLOSE, kernel_fill)
 
-    # Threshold leve
-    _, binary = cv2.threshold(no_lines, 50, 255, cv2.THRESH_BINARY)
+    # ***Suavização final***: remove ruído isolado sem comer bordas
+    smoothed = cv2.medianBlur(filled, 3)
 
-    # FILTRO DE ÁREA — remove contornos pequenos (ruído)
-    contours, _ = cv2.findContours(binary, cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE)
-    cleaned = np.zeros_like(binary)
-    for cnt in contours:
-        area = cv2.contourArea(cnt)
-        if area > 100:  # ajusta esse valor conforme a sua imagem
-            cv2.drawContours(cleaned, [cnt], -1, 255, -1)
+    cv2.imwrite(output_path, smoothed)
+    return smoothed
 
-    cv2.imwrite(output_path, cleaned)
-    return cleaned
 
 # Processa todas as imagens
 filtered_images = []
@@ -62,3 +57,4 @@ for path in image_paths:
     output_path = os.path.join("filtered_colums_from_raw", f"filtered_{filename}")
     filtered = enhance_fingerprints(path, output_path)
     filtered_images.append((filename, filtered))
+

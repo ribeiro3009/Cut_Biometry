@@ -2,24 +2,38 @@
     "image_path": "C:/Users/rj0369870548/Desktop/Projects_VsCode/Corte_fichas/Cut_Biometry/Cut_Biometry_unificando\\saida\\ficha_901229830060_verso\\columns_filtered\\filtered_ficha_901229830060_verso_colum2_5.jpg",
     "fingerprints": [
         {
-            "x": 40,
-            "yi": 361,
-            "yf": 507,
-            "w": 159,
+            "x": 65,
+            "yi": 169,
+            "yf": 325,
+            "w": 146,
+            "color": "green"
+        },
+        {
+            "x": 39,
+            "yi": 358,
+            "yf": 561,
+            "w": 211,
             "color": "green"
         },
         {
             "x": 47,
-            "yi": 819,
-            "yf": 964,
-            "w": 163,
+            "yi": 604,
+            "yf": 772,
+            "w": 166,
             "color": "green"
         },
         {
-            "x": 8,
-            "yi": 1022,
-            "yf": 1191,
-            "w": 196,
+            "x": 45,
+            "yi": 809,
+            "yf": 965,
+            "w": 205,
+            "color": "green"
+        },
+        {
+            "x": 0,
+            "yi": 1021,
+            "yf": 1190,
+            "w": 243,
             "color": "green"
         }
     ]

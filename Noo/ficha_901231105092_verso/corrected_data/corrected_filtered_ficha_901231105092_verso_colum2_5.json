@@ -2,73 +2,73 @@
     "image_path": "C:/Users/rj0369870548/Desktop/Projects_VsCode/Corte_fichas/Cut_Biometry/Cut_Biometry_unificando\\saida\\ficha_901231105092_verso\\columns_filtered\\filtered_ficha_901231105092_verso_colum2_5.jpg",
     "fingerprints": [
         {
-            "x": 39,
+            "x": 37,
             "yi": 0,
-            "yf": 194,
-            "w": 183,
+            "yf": 192,
+            "w": 185,
             "color": "green"
         },
         {
-            "x": 22,
+            "x": 19,
             "yi": 247,
-            "yf": 457,
-            "w": 201,
+            "yf": 458,
+            "w": 210,
             "color": "green"
         },
         {
-            "x": 22,
-            "yi": 467,
-            "yf": 676,
-            "w": 207,
-            "color": "green"
-        },
-        {
-            "x": 27,
-            "yi": 681,
-            "yf": 888,
-            "w": 208,
-            "color": "green"
-        },
-        {
-            "x": 7,
-            "yi": 900,
-            "yf": 1141,
+            "x": 19,
+            "yi": 459,
+            "yf": 674,
             "w": 226,
+            "color": "red"
+        },
+        {
+            "x": 19,
+            "yi": 674,
+            "yf": 872,
+            "w": 226,
+            "color": "red"
+        },
+        {
+            "x": 5,
+            "yi": 899,
+            "yf": 1144,
+            "w": 224,
             "color": "green"
         },
         {
-            "x": 41,
-            "yi": 1143,
+            "x": 38,
+            "yi": 1144,
             "yf": 1350,
-            "w": 202,
+            "w": 204,
             "color": "red"
         },
         {
-            "x": 41,
-            "yi": 1350,
-            "yf": 1539,
-            "w": 202,
+            "x": 38,
+            "yi": 1351,
+            "yf": 1535,
+            "w": 204,
             "color": "red"
         },
         {
-            "x": 46,
-            "yi": 1539,
-            "yf": 1788,
-            "w": 199,
+            "x": 44,
+            "yi": 1535,
+            "yf": 1795,
+            "w": 201,
             "color": "red"
         },
         {
-            "x": 46,
-            "yi": 1788,
-            "yf": 1986,
-            "w": 199,
+            "x": 44,
+            "yi": 1795,
+            "yf": 1981,
+            "w": 201,
             "color": "red"
         },
         {
-            "x": 34,
-            "yi": 2015,
+            "x": 32,
+            "yi": 2013,
             "yf": 2200,
-            "w": 211,
+            "w": 213,
             "color": "green"
         }
     ]
