@@ -49,7 +49,7 @@ def mark_columns(input_image_path, output_image_path, classification):
     n_pixels_start_5_5 = 100
     n_pixels_start_0_10 = 200
     n_pixels_end = 20
-    minimal_length = 50
+    minimal_length = 150
     additional_steps = 10
     img_original = cv2.imread(input_image_path)
     heigth, width = img_original.shape[:2]
